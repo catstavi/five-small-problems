@@ -40,9 +40,25 @@ function combine_lists(long, short) {
   var i = 0;
   var new_list = [];
   while(short[i] != undefined) {
-    new_list.push(short[i])
-    new_list.push(long[i])
-    i ++
+    new_list.push(short[i]);
+    new_list.push(long[i]);
+    i++;
   }
   return new_list.concat(long.slice(i,long.length));
 }
+
+// Problem 3
+// Write a function that computes the list of the first 100 Fibonacci numbers. By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two. As an example, here are the first 10 Fibonnaci numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, and 34.
+
+function fib_it_up(len) {
+  var fib_list = [0,1];
+  var i = 1;
+  while (i < len-1) {
+    fib_list.push(fib_list[i] + fib_list[i-1]);
+    i++;
+  }
+  return fib_list;
+}
+
+// Problem 4
+// Write a function that given a list of non negative integers, arranges them such that they form the largest possible number. For example, given [50, 2, 1, 9], the largest formed number is 95021.

@@ -30,5 +30,19 @@ function recursion_summer(num_list) {
 // Write a function that combines two lists by alternatingly taking elements. For example: given the two lists [a, b, c] and [1, 2, 3], the function should return [a, 1, b, 2, c, 3].
 
 function list_weaver(list1, list2) {
-  
+  if (list1.length > list2.length) {
+    return combine_lists(list1, list2);
+  } else {
+    return combine_lists(list2,list1);
+  }
+}
+function combine_lists(long, short) {
+  var i = 0;
+  var new_list = [];
+  while(short[i] != undefined) {
+    new_list.push(short[i])
+    new_list.push(long[i])
+    i ++
+  }
+  return new_list.concat(long.slice(i,long.length));
 }
